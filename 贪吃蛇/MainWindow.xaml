@@ -1,0 +1,50 @@
+﻿<Window x:Class="贪吃蛇.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:贪吃蛇"
+        mc:Ignorable="d"
+        Title="Snake like eating!" Height="400" Width="800"
+        KeyDown="dirChange">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Click="startGame" Header="开始游戏"/>
+            <MenuItem Name="stopItem" Click="pauseGame" Header="暂停"/>
+            <MenuItem Click="stopGame" Header="结束游戏"/>
+        </Menu>
+        <Canvas Grid.Row="1" Grid.Column="0" Name="MainGame">
+            <!--地图区!-->
+        </Canvas>
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Label Content="{Binding ElementName=socBox,Path=Text}" Margin="14,20,0,0" HorizontalAlignment="Left" Width="60" Height="33" VerticalAlignment="Top"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   FontSize="20">
+            </Label>
+            <TextBox Name="socBox" Text="分数:" HorizontalAlignment="Left" Width="32" Height="349" VerticalAlignment="Bottom" Visibility="Hidden"
+                     />
+            <TextBox    
+                Height="33"
+                Width="103"
+                Name="textScore"
+                IsReadOnly="True"
+                Margin="79,20,0,0"
+                VerticalAlignment="Top"
+                TextAlignment="Center"
+                VerticalContentAlignment="Center"
+                FontSize="22" 
+                HorizontalAlignment="Left" 
+            />
+        </Grid>
+    </Grid>
+
+</Window>
